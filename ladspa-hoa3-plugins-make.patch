@@ -1,0 +1,19 @@
+--- HOA3-plugins-0.3.0/source/Makefile.orig	2018-01-21 17:24:22.000000000 +0100
++++ HOA3-plugins-0.3.0/source/Makefile	2022-01-28 17:46:52.040130633 +0100
+@@ -19,14 +19,14 @@
+ 
+ 
+ CPPFLAGS += -I. 
+-CXXFLAGS += -fPIC -D_REENTRANT -Wall -O2
++CXXFLAGS += -fPIC -D_REENTRANT -Wall
+ BINDIR = /usr/lib/ladspa
+ 
+ OBJS = hoa3tools.o sn3dpan3.o zrotator3.o sn3dhtop3.o convert3.o ambixfm3.o
+ 
+ 
+ hoa3tools.so:	$(OBJS)
+-	$(CXX) -shared -o $@ $(OBJS)
++	$(CXX) $(LDFLAGS) -shared -o $@ $(OBJS)
+ 
+ 
+ install:	hoa3tools.so
