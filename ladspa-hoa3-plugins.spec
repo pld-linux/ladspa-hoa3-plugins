@@ -24,7 +24,7 @@ Wtyczki LADSPA HOA3 (dźwięku trójwymiarowego).
 
 %prep
 %setup -q -n HOA3-plugins-%{version}
-%patch0 -p1
+%patch -P0 -p1
 
 %build
 CPPFLAGS="%{rpmcppflags}" \
